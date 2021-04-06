@@ -12,7 +12,7 @@ $ chmod +x start-server.sh
 $ ./start-server.sh
 
 # run curl commands
-$ ./curl.sh
+$ ./test.sh
 
 # Postman collection folder
 $ /postman/
