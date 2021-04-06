@@ -29,9 +29,8 @@ services:
                 ipv4_address: 172.25.0.90
                 aliases:
                     - sub-server.local
+                    
 networks:
-
- 
   png-main-network:
     ipam:
         driver: default
