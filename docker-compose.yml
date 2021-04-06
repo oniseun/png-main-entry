@@ -5,14 +5,13 @@ services:
         build:
             context: ./pub-server
             dockerfile: Dockerfile
-        links:
-            - "sub-server:pub-server" 
         ports:
             - "8000:8000"
         volumes:
             - "./pub-server/:/usr/src/app"
         networks:
             png-main-network:
+                ipv4_address: 172.25.0.80
                 aliases:
                     - pub-server.local
 
@@ -27,8 +26,14 @@ services:
             - "./sub-server/:/usr/src/app"
         networks:
             png-main-network:
+                ipv4_address: 172.25.0.90
                 aliases:
                     - sub-server.local
 networks:
+
+ 
   png-main-network:
-    driver: bridge
+    ipam:
+        driver: default
+        config:
+          - subnet: 172.25.0.0/16
