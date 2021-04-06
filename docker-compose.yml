@@ -16,36 +16,21 @@ services:
             aliases:
               - sub-server.local
             
-        # command: >
-        #     docker run -dp 9000:9000 sub-server
-        # command: >
-        #   bash -c "
-        #   echo 'Installing sub-server dependencies...'
-        #   && npm i
-        #   && echo 'Bootstraping application...'
-        #   && npm run prod
-        #   "
     pub-server:
-      container_name: pub-server
-      build:
-        context: ./pub-server
-        dockerfile: Dockerfile
-      ports:
-        - "8000:8000"
-      volumes:
-        - "./pub-server/:/usr/src/app"
-      networks:
-        png-main-network:
-          ipv4_address: 172.25.0.15
-          aliases:
-            - pub-server.local
-    #   command: >
-    #     bash -c "
-    #     echo 'Installing pub-server dependencies...'
-    #     && npm i
-    #     && echo 'Bootstraping application...'
-    #     && npm run prod
-    #     "
+        container_name: pub-server
+        build:
+            context: ./pub-server
+            dockerfile: Dockerfile
+        ports:
+            - "8000:8000"
+        volumes:
+            - "./pub-server/:/usr/src/app"
+        networks:
+            png-main-network:
+                ipv4_address: 172.25.0.15
+                aliases:
+                    - pub-server.local
+
 networks:
   png-main-network:
     ipam:
