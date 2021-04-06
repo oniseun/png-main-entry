@@ -10,3 +10,6 @@ $ chmod +x start-server.sh
 
 # start 
 $ ./start-server.sh
+
+# run curl commands
+$ ./curl.sh
