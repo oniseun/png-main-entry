@@ -5,6 +5,8 @@
 ## Build Setup
 
 ``` bash
-# install dependencies
+# make executable
 $ chmod +x start-server.sh
+
+# start 
 $ ./start-server.sh
